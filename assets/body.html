@@ -1,0 +1,31 @@
+<div class="toolbar">
+  <div class="grp"><div class="sbox"><input id="q" placeholder="Search / filter rows…" spellcheck="false"><span id="qx">&times;</span></div>
+    <span id="qind"><i class="spin sm"></i><span id="qtxt"></span></span></div>
+  <div class="grp">
+    <button id="save" class="primary" title="Save (Ctrl+S)" disabled>Save</button>
+    <button id="revert" title="Discard unsaved edits and reload" disabled>Revert</button>
+    <button id="addrow" title="Insert a row below the selection">+ Row</button>
+    <button id="delrow" title="Delete the selected row" disabled>− Row</button>
+    <button id="addcol" title="Add a column">+ Col</button>
+    <span id="dirty">● Unsaved</span>
+  </div>
+  <div class="grp"><label title="Treat the first row as column names"><input type="checkbox" id="hdr" checked> Header row</label></div>
+  <div class="grp"><label for="dl">Delimiter</label>
+    <select id="dl"><option value="auto">Auto</option><option value=",">Comma (,)</option><option value=";">Semicolon (;)</option><option value="&#9;">Tab</option><option value="|">Pipe (|)</option></select></div>
+  <div class="grp"><button id="cmd" title="Copy the current view as a Markdown table">Copy MD</button><button id="ctsv" title="Copy the current view as TSV (paste into Excel / Sheets)">Copy TSV</button></div>
+  <div class="stats" id="stats"></div>
+</div>
+<div class="cellbar"><span id="addr" class="badge">-</span><input id="bar" placeholder="Select a cell to see and edit its value here; double-click or press Enter to edit in place" disabled spellcheck="false"></div>
+<div id="wrap" class="wrap">
+  <div id="ovl" class="ovl"><i class="spin"></i><span id="ovlmsg">Loading…</span></div>
+  <table><thead id="th"></thead><tbody id="tb"></tbody></table>
+</div>
+<div class="footer">
+  <span id="info" class="mut">Double-click or press Enter to edit a cell · Ctrl+S to save</span>
+  <div class="grp"><label for="ps">Rows per page</label>
+    <select id="ps"><option>25</option><option selected>50</option><option>100</option><option>250</option><option>1000</option><option value="-1">All (max 10,000)</option></select>
+    <button id="p1" title="First page">&laquo;</button><button id="p0" title="Previous page">&lsaquo;</button>
+    <span id="pinfo"></span>
+    <button id="p2" title="Next page">&rsaquo;</button><button id="p3" title="Last page">&raquo;</button></div>
+</div>
+<div id="toast"></div>

@@ -1,0 +1,4 @@
+/target
+/packaging/msix/out
+/packaging/msix/stage
+*.WebView2/
