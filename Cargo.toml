@@ -1,6 +1,6 @@
 [package]
 name = "hellocsv"
-version = "0.1.0"
+version = "0.1.1"
 edition = "2024"
 license = "MIT"
 description = "Tiny cross-platform CSV/TSV viewer and editor that handles very large files"
