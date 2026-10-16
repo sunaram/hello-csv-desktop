@@ -12,7 +12,9 @@ use std::sync::{Arc, Mutex};
 pub const STREAM_OVER: u64 = 5 * 1024 * 1024;
 /// One row offset is stored per STRIDE rows.
 const STRIDE: u64 = 32;
+/// Bytes read per `scan` step when rewriting a file; searches use the smaller SEARCH_WINDOW so each request stays quick.
 const WINDOW: usize = 16 << 20;
+const SEARCH_WINDOW: usize = 2 << 20;
 
 /// Index of the byte offset of every STRIDE-th non-blank record (the header counts as record 0).
 pub struct Index {
@@ -218,11 +220,11 @@ pub fn page(path: &Path, idx: &Index, delim: u8, hdr: bool, ncols: usize, page: 
 
 /// Feed whole records starting at byte `off` (at most one WINDOW of the file) to `cb` (return false to stop).
 /// Returns the offset to continue from and whether the end of the file was reached.
-fn scan<F: FnMut(&[u8]) -> bool>(f: &mut File, off: u64, mut cb: F) -> std::io::Result<(u64, bool)> {
+fn scan<F: FnMut(&[u8]) -> bool>(f: &mut File, off: u64, window: usize, mut cb: F) -> std::io::Result<(u64, bool)> {
     f.seek(SeekFrom::Start(off))?;
     let mut buf = vec![];
-    f.take(WINDOW as u64).read_to_end(&mut buf)?;
-    let eof = buf.len() < WINDOW;
+    f.take(window as u64).read_to_end(&mut buf)?;
+    let eof = buf.len() < window;
     let mut i = 0;
     let mut stopped = false;
     while i < buf.len() {
@@ -266,7 +268,7 @@ pub fn search(path: &Path, delim: u8, hdr: bool, q: &str, off: u64, row: u64, ma
     let mut row = row;
     let mut skip_header = hdr && off == 0;
     let mut matches = vec![];
-    let (off, done) = scan(&mut f, off, |rec| {
+    let (off, done) = scan(&mut f, off, SEARCH_WINDOW, |rec| {
         if rec_blank(rec, delim) {
             return true;
         }
@@ -300,7 +302,7 @@ pub fn save_delta(path: &Path, delim: u8, hdr: bool, header: Option<&str>, mods:
         loop {
             let first = off == 0;
             let mut first_rec = first;
-            let (next, eof) = scan(&mut f, off, |rec| {
+            let (next, eof) = scan(&mut f, off, WINDOW, |rec| {
                 let bom = first_rec && rec.starts_with(&[0xEF, 0xBB, 0xBF]);
                 first_rec = false;
                 let mut w = |bytes: &[u8]| {

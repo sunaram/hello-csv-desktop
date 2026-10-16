@@ -4,6 +4,7 @@
   const mac = /Mac/.test(navigator.platform);
   const send = (m) => window.ipc.postMessage(m);
   const MAXALL = 10000;
+  const nf = (n) => n.toLocaleString(window.__loc || undefined);
   const api = (u) => fetch(u).then((r) => r.json());
 
   // document state
@@ -90,9 +91,9 @@
     const byCol = (a, b) => cmp(a.c[sortCol], b.c[sortCol]) * sortDir;
     if (!stream) list = view.slice(from, from + n).map((i) => ({ r: i, c: rows[i] }));
     else if (searching) {
-      let m = matches.map((x) => ({ r: x.r, c: edits.get(x.r) || x.c }));
-      if (sortCol >= 0) m.sort(byCol);
-      list = m.slice(from, from + n);
+      const wrap = (x) => ({ r: x.r, c: edits.get(x.r) || x.c });
+      if (sortCol >= 0) list = matches.map(wrap).sort(byCol).slice(from, from + n);
+      else list = matches.slice(from, from + n).map(wrap);   // cheap: results can reach millions
     } else {
       list = pageRows.map((c, k) => ({ r: from + k, c: edits.get(from + k) || c }));
       if (sortCol >= 0) list.sort(byCol);
@@ -147,13 +148,13 @@
   function renderFooter() {
     const mp = maxPage();
     if (page > mp) page = mp;
-    el.pinfo.textContent = 'Page ' + page + ' of ' + mp.toLocaleString();
+    el.pinfo.textContent = 'Page ' + page + ' of ' + nf(mp);
     el.p0.disabled = el.p1.disabled = page <= 1;
     el.p2.disabled = el.p3.disabled = page >= mp;
-    let s = (stream ? total : rows.length).toLocaleString() + ' rows × ' + headers.length + ' cols';
+    let s = nf(stream ? total : rows.length) + ' rows × ' + headers.length + ' cols';
     if (indexing) s += ' (indexing…)';
-    if (stream && searching) s += ' · ' + matches.length.toLocaleString() + ' matches';
-    else if (!stream && query.trim()) s += ' · ' + view.length.toLocaleString() + ' shown';
+    if (stream && searching) s += ' · ' + nf(matches.length) + ' matches';
+    else if (!stream && query.trim()) s += ' · ' + nf(view.length) + ' shown';
     el.stats.textContent = s;
     el.delrow.disabled = !sel || stream;
   }
@@ -242,7 +243,7 @@
       for (const m of j.m) matches.push({ r: m[0], c: m[1] });
       off = j.off; row = j.row;
       el.qind.firstChild.style.display = j.done ? 'none' : '';
-      el.qtxt.textContent = j.done ? matches.length.toLocaleString() + ' matches' : Math.round(j.ratio * 100) + '% · ' + matches.length.toLocaleString() + ' matches';
+      el.qtxt.textContent = j.done ? nf(matches.length) + ' matches' : Math.round(j.ratio * 100) + '% · ' + nf(matches.length) + ' matches';
       if (!editing && (j.m.length || j.done)) renderBody();
       if (j.done) break;
       await new Promise((r) => setTimeout(r, 0));

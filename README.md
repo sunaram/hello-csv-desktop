@@ -21,6 +21,13 @@ It is the desktop sibling of the [Hello CSV VS Code extension](https://github.co
 - **Updates:** downloadable builds check GitHub Releases once a day and show a notice (Help menu to turn off or check now);
   Microsoft Store builds never do, the Store updates them.
 
+![Table view](docs/screenshots/table.png)
+
+| | |
+|---|---|
+| ![Editing](docs/screenshots/editing.png) | ![Search, dark theme](docs/screenshots/search-dark.png) |
+| ![Two million rows](docs/screenshots/large-file.png) | ![Searching a 170 MB file](docs/screenshots/large-search.png) |
+
 ## Install
 
 Downloads are on the [Releases page](https://github.com/sunaram/hello-csv-desktop/releases/latest):
@@ -56,6 +63,9 @@ target/release/hellocsv samples/customers.csv
 ```
 
 Windows Store package: `powershell -File packaging/msix/build.ps1` (see the header of that script for the Partner Center values).
+
+Store art and screenshots: `packaging/msix/gen-store-art.ps1`, `tools/screenshot.ps1`; listing text in
+`packaging/msix/store-listing.md`. Privacy policy: [PRIVACY.md](PRIVACY.md).
 
 ## Layout
 

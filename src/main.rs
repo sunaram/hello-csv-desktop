@@ -109,10 +109,12 @@ fn err_json(msg: &str) -> String {
 }
 
 fn page(theme: &str, updates: bool) -> String {
+    // HELLOCSV_LOCALE (e.g. en-US) overrides the number formatting locale; used to make store screenshots
+    let loc = std::env::var("HELLOCSV_LOCALE").map(|l| format!("window.__loc=\"{}\";", l.replace(['"', '\\'], ""))).unwrap_or_default();
     let upd = if is_store() { String::new() } else { format!("window.__upd={{v:\"{}\",auto:{updates}}};", env!("CARGO_PKG_VERSION")) };
     format!(
         "<!doctype html><html data-theme=\"{theme}\"><meta charset=utf-8><meta name=viewport content=\"width=device-width,initial-scale=1\">\
-<title>{APP}</title><base href=\"{ORIGIN}/\"><style>{CSS}</style>{BODY}<script>{upd}{JS}</script>"
+<title>{APP}</title><base href=\"{ORIGIN}/\"><style>{CSS}</style>{BODY}<script>{loc}{upd}{JS}</script>"
     )
 }
 
@@ -196,7 +198,7 @@ fn api(st: &Shared, epoch: &Arc<AtomicU64>, path: &str, q: &str) -> String {
             }
             Err(e) => err_json(&e.to_string()),
         },
-        "/__search" => match csv::search(&d.path, d.delim, d.hdr, &param(q, "q"), num("off", 0), num("row", 0), 200) {
+        "/__search" => match csv::search(&d.path, d.delim, d.hdr, &param(q, "q"), num("off", 0), num("row", 0), 1000) {
             Ok(r) => {
                 let size = std::fs::metadata(&d.path).map_or(1, |m| m.len().max(1));
                 let mut o = String::from("{\"m\":[");

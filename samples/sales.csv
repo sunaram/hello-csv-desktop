@@ -1,0 +1,301 @@
+Order ID,Order Date,Customer,Region,Product,Quantity,Unit Price,Total,Status,Notes
+10000,2025-12-13,Ava Rossi,North America,Monitor Arm,1,79.00,79.00,Returned,
+10001,2025-10-27,Priya Patel,North America,Noise-Cancelling Headset,5,199.00,995.00,Returned,
+10002,2025-11-27,Mia Singh,Middle East,Noise-Cancelling Headset,5,199.00,995.00,Delivered,
+10003,2025-02-06,Aarav Dubois,Middle East,Desk Lamp,3,59.00,177.00,Processing,"Gift wrap, ""fragile"" sticker"
+10004,2026-02-22,Zara Rossi,North America,USB-C Dock,3,129.00,387.00,Delivered,
+10005,2026-04-07,Sofia Kim,Europe,USB-C Dock,1,129.00,129.00,Delivered,
+10006,2026-06-14,Elena Khan,Europe,Monitor Arm,2,79.00,158.00,Delivered,
+10007,2025-03-03,Ethan Tanaka,Europe,Ergo Chair,5,289.00,1445.00,Delivered,
+10008,2025-05-27,Isla Kim,Europe,Webcam 4K,1,99.00,99.00,Processing,
+10009,2026-02-23,Emma Patel,Asia Pacific,Noise-Cancelling Headset,5,199.00,995.00,Shipped,
+10010,2026-03-25,Liam Dubois,Middle East,Noise-Cancelling Headset,3,199.00,597.00,Processing,Call before delivery
+10011,2025-06-19,Hugo Garcia,Europe,Ergo Chair,2,289.00,578.00,Shipped,
+10012,2025-01-08,Isla Kim,Asia Pacific,Monitor Arm,3,79.00,237.00,Processing,
+10013,2025-05-20,Hugo Kim,Middle East,Webcam 4K,4,99.00,396.00,Returned,
+10014,2025-01-16,Aarav Singh,Middle East,Webcam 4K,5,99.00,495.00,Processing,
+10015,2025-12-05,Lucas Rossi,Latin America,Desk Lamp,2,59.00,118.00,Returned,Call before delivery
+10016,2025-07-01,Isla Kim,Latin America,Standing Desk,3,349.00,1047.00,Shipped,
+10017,2026-03-15,Aarav Singh,Middle East,Standing Desk,5,349.00,1745.00,Shipped,
+10018,2025-11-23,Chen Smith,Middle East,Desk Lamp,1,59.00,59.00,Delivered,
+10019,2025-12-09,Ethan Khan,North America,Monitor Arm,3,79.00,237.00,Delivered,"Gift wrap, ""fragile"" sticker"
+10020,2025-06-19,Zara Tanaka,Asia Pacific,Standing Desk,2,349.00,698.00,Delivered,
+10021,2026-07-04,Yuki Ivanov,Asia Pacific,Mechanical Keyboard,2,149.00,298.00,Delivered,
+10022,2025-03-03,Fatima Brown,Middle East,Ergo Chair,2,289.00,578.00,Delivered,
+10023,2025-08-01,Fatima Tanaka,Europe,Mechanical Keyboard,3,149.00,447.00,Processing,
+10024,2026-06-13,Aarav Tanaka,North America,Noise-Cancelling Headset,4,199.00,796.00,Delivered,
+10025,2025-05-17,Yuki Brown,North America,Standing Desk,5,349.00,1745.00,Delivered,
+10026,2025-03-28,Zara Ivanov,North America,Webcam 4K,5,99.00,495.00,Delivered,
+10027,2026-06-09,Yuki Lopez,Latin America,Desk Lamp,5,59.00,295.00,Shipped,Call before delivery
+10028,2026-03-31,Olivia Silva,Asia Pacific,Noise-Cancelling Headset,4,199.00,796.00,Delivered,
+10029,2025-03-25,Olivia Kim,North America,Ergo Chair,3,289.00,867.00,Processing,
+10030,2025-09-18,Noah Dubois,Europe,Noise-Cancelling Headset,2,199.00,398.00,Delivered,"Gift wrap, ""fragile"" sticker"
+10031,2026-03-09,Zara Ivanov,North America,Webcam 4K,2,99.00,198.00,Returned,
+10032,2025-07-17,Isla Smith,Latin America,Ergo Chair,2,289.00,578.00,Delivered,
+10033,2026-02-20,Chen Nguyen,Europe,Noise-Cancelling Headset,1,199.00,199.00,Returned,"Gift wrap, ""fragile"" sticker"
+10034,2026-05-08,Chen Garcia,Europe,Mechanical Keyboard,1,149.00,149.00,Returned,
+10035,2025-11-05,Liam Silva,Latin America,Desk Lamp,3,59.00,177.00,Returned,
+10036,2026-06-11,Hugo Singh,Latin America,Ergo Chair,2,289.00,578.00,Shipped,
+10037,2025-05-04,Liam Patel,Latin America,Noise-Cancelling Headset,2,199.00,398.00,Returned,
+10038,2025-09-28,Noah Müller,Asia Pacific,Mechanical Keyboard,4,149.00,596.00,Delivered,
+10039,2025-01-23,Isla Rossi,Middle East,Ergo Chair,1,289.00,289.00,Delivered,
+10040,2025-06-06,Aarav Kim,Asia Pacific,Webcam 4K,5,99.00,495.00,Delivered,
+10041,2026-04-09,Omar Nguyen,Europe,Noise-Cancelling Headset,3,199.00,597.00,Returned,
+10042,2025-11-24,Lucas Patel,Latin America,Webcam 4K,2,99.00,198.00,Processing,
+10043,2026-02-04,Ethan Müller,Middle East,Noise-Cancelling Headset,3,199.00,597.00,Returned,
+10044,2026-01-02,Liam Ivanov,North America,Mechanical Keyboard,2,149.00,298.00,Processing,
+10045,2026-03-01,Ava Khan,Latin America,USB-C Dock,4,129.00,516.00,Returned,"Gift wrap, ""fragile"" sticker"
+10046,2026-08-19,Olivia Lopez,Europe,Monitor Arm,2,79.00,158.00,Delivered,
+10047,2026-04-17,Sofia Patel,North America,Monitor Arm,5,79.00,395.00,Returned,
+10048,2026-06-27,Noah Rossi,Asia Pacific,Webcam 4K,3,99.00,297.00,Delivered,
+10049,2026-08-21,Noah Smith,Latin America,Noise-Cancelling Headset,2,199.00,398.00,Delivered,
+10050,2026-01-23,Liam Nguyen,Latin America,Noise-Cancelling Headset,4,199.00,796.00,Delivered,
+10051,2025-12-01,Liam Lopez,North America,Ergo Chair,1,289.00,289.00,Returned,
+10052,2026-04-10,Noah Khan,Latin America,Mechanical Keyboard,5,149.00,745.00,Processing,
+10053,2026-01-03,Hugo Nguyen,North America,USB-C Dock,2,129.00,258.00,Delivered,
+10054,2026-01-07,Fatima Dubois,Latin America,Desk Lamp,5,59.00,295.00,Processing,
+10055,2026-02-24,Emma Dubois,Asia Pacific,Monitor Arm,3,79.00,237.00,Delivered,
+10056,2025-11-27,Aarav Nguyen,Latin America,USB-C Dock,2,129.00,258.00,Delivered,
+10057,2025-05-15,Emma Tanaka,Middle East,Webcam 4K,1,99.00,99.00,Shipped,
+10058,2025-08-30,Olivia Khan,Middle East,USB-C Dock,4,129.00,516.00,Delivered,
+10059,2026-03-13,Yuki Lopez,Europe,Mechanical Keyboard,1,149.00,149.00,Returned,"Gift wrap, ""fragile"" sticker"
+10060,2025-05-17,Chen Rossi,Asia Pacific,Ergo Chair,5,289.00,1445.00,Delivered,"Gift wrap, ""fragile"" sticker"
+10061,2025-07-18,Zara Nguyen,Middle East,Noise-Cancelling Headset,1,199.00,199.00,Shipped,
+10062,2026-08-05,Noah Rossi,Europe,Webcam 4K,5,99.00,495.00,Returned,
+10063,2026-03-24,Mateo Dubois,Asia Pacific,Standing Desk,4,349.00,1396.00,Processing,"Gift wrap, ""fragile"" sticker"
+10064,2025-11-24,Omar Nguyen,Middle East,USB-C Dock,3,129.00,387.00,Processing,
+10065,2025-10-22,Mia Garcia,Middle East,Mechanical Keyboard,3,149.00,447.00,Delivered,
+10066,2025-11-15,Noah Müller,North America,Monitor Arm,4,79.00,316.00,Delivered,
+10067,2026-03-19,Ethan Müller,Latin America,Webcam 4K,3,99.00,297.00,Delivered,
+10068,2025-07-25,Elena Lopez,Latin America,Mechanical Keyboard,3,149.00,447.00,Shipped,
+10069,2026-03-19,Emma Nguyen,North America,Standing Desk,1,349.00,349.00,Delivered,
+10070,2026-06-15,Chen Lopez,Asia Pacific,Monitor Arm,1,79.00,79.00,Processing,
+10071,2026-02-25,Lucas Khan,Europe,USB-C Dock,5,129.00,645.00,Shipped,
+10072,2025-04-09,Lucas Rossi,Middle East,USB-C Dock,3,129.00,387.00,Delivered,
+10073,2025-07-16,Hugo Tanaka,Middle East,Mechanical Keyboard,4,149.00,596.00,Processing,
+10074,2025-04-10,Hugo Brown,Asia Pacific,Monitor Arm,3,79.00,237.00,Returned,
+10075,2025-01-24,Priya Silva,Latin America,Ergo Chair,5,289.00,1445.00,Delivered,
+10076,2025-02-14,Aarav Singh,Asia Pacific,Standing Desk,1,349.00,349.00,Delivered,
+10077,2026-05-22,Elena Lopez,Latin America,Desk Lamp,1,59.00,59.00,Shipped,
+10078,2025-07-22,Olivia Lopez,North America,USB-C Dock,2,129.00,258.00,Processing,
+10079,2025-06-20,Chen Smith,Latin America,Standing Desk,5,349.00,1745.00,Shipped,Call before delivery
+10080,2026-03-26,Chen Kim,Asia Pacific,Desk Lamp,3,59.00,177.00,Delivered,"Gift wrap, ""fragile"" sticker"
+10081,2025-03-30,Omar Tanaka,Latin America,Standing Desk,5,349.00,1745.00,Shipped,
+10082,2025-05-02,Noah Kim,Middle East,Monitor Arm,4,79.00,316.00,Returned,
+10083,2025-01-20,Zara Müller,Latin America,Monitor Arm,3,79.00,237.00,Delivered,
+10084,2025-08-17,Yuki Garcia,Asia Pacific,Monitor Arm,2,79.00,158.00,Shipped,"Gift wrap, ""fragile"" sticker"
+10085,2025-12-15,Priya Dubois,Latin America,Mechanical Keyboard,2,149.00,298.00,Delivered,"Gift wrap, ""fragile"" sticker"
+10086,2026-03-01,Mia Patel,Middle East,Desk Lamp,1,59.00,59.00,Delivered,
+10087,2026-07-22,Ava Kim,Europe,USB-C Dock,1,129.00,129.00,Shipped,"Gift wrap, ""fragile"" sticker"
+10088,2025-06-26,Noah Nguyen,North America,Standing Desk,5,349.00,1745.00,Delivered,
+10089,2026-06-30,Noah Lopez,Latin America,Noise-Cancelling Headset,1,199.00,199.00,Delivered,
+10090,2026-01-08,Ava Ivanov,Europe,Standing Desk,4,349.00,1396.00,Processing,Call before delivery
+10091,2025-08-27,Priya Kim,Asia Pacific,Monitor Arm,1,79.00,79.00,Processing,
+10092,2026-04-25,Hugo Lopez,Middle East,Standing Desk,3,349.00,1047.00,Shipped,
+10093,2025-10-20,Emma Rossi,Europe,Webcam 4K,3,99.00,297.00,Delivered,
+10094,2025-11-24,Omar Tanaka,North America,Mechanical Keyboard,5,149.00,745.00,Delivered,
+10095,2025-10-17,Lucas Singh,Europe,Desk Lamp,2,59.00,118.00,Delivered,
+10096,2025-06-13,Hugo Lopez,Middle East,Standing Desk,3,349.00,1047.00,Delivered,
+10097,2025-08-04,Aarav Lopez,Middle East,Webcam 4K,5,99.00,495.00,Delivered,
+10098,2025-01-24,Mateo Müller,Asia Pacific,Mechanical Keyboard,1,149.00,149.00,Delivered,
+10099,2025-08-28,Fatima Tanaka,North America,USB-C Dock,4,129.00,516.00,Returned,"Gift wrap, ""fragile"" sticker"
+10100,2025-09-15,Noah Rossi,Asia Pacific,Desk Lamp,5,59.00,295.00,Delivered,
+10101,2025-11-17,Hugo Khan,Asia Pacific,Monitor Arm,2,79.00,158.00,Returned,
+10102,2026-02-07,Priya Rossi,Latin America,Standing Desk,1,349.00,349.00,Delivered,
+10103,2025-04-11,Hugo Smith,Latin America,Webcam 4K,1,99.00,99.00,Delivered,
+10104,2025-12-25,Ava Khan,Asia Pacific,Monitor Arm,5,79.00,395.00,Returned,
+10105,2025-02-05,Olivia Tanaka,Asia Pacific,Standing Desk,2,349.00,698.00,Delivered,
+10106,2025-08-02,Sofia Kim,Middle East,Standing Desk,3,349.00,1047.00,Shipped,
+10107,2025-09-25,Fatima Garcia,Middle East,Desk Lamp,4,59.00,236.00,Returned,Call before delivery
+10108,2025-04-21,Aarav Nguyen,Middle East,USB-C Dock,3,129.00,387.00,Shipped,
+10109,2026-07-11,Aarav Lopez,Asia Pacific,Mechanical Keyboard,4,149.00,596.00,Returned,
+10110,2025-10-17,Olivia Dubois,North America,Ergo Chair,3,289.00,867.00,Shipped,
+10111,2025-10-09,Lucas Khan,Middle East,Ergo Chair,1,289.00,289.00,Processing,
+10112,2026-06-19,Zara Müller,Europe,Ergo Chair,3,289.00,867.00,Delivered,
+10113,2025-03-11,Noah Tanaka,Asia Pacific,Ergo Chair,2,289.00,578.00,Delivered,
+10114,2025-08-31,Aarav Ivanov,Middle East,USB-C Dock,2,129.00,258.00,Delivered,Call before delivery
+10115,2026-08-10,Ava Brown,Latin America,Ergo Chair,1,289.00,289.00,Returned,
+10116,2026-01-09,Omar Tanaka,Asia Pacific,Webcam 4K,3,99.00,297.00,Delivered,
+10117,2025-03-13,Zara Khan,North America,Ergo Chair,1,289.00,289.00,Shipped,
+10118,2025-03-03,Yuki Singh,Europe,Desk Lamp,5,59.00,295.00,Processing,
+10119,2026-01-18,Aarav Ivanov,North America,Standing Desk,5,349.00,1745.00,Processing,"Gift wrap, ""fragile"" sticker"
+10120,2025-04-19,Priya Silva,Latin America,Ergo Chair,5,289.00,1445.00,Delivered,
+10121,2026-08-19,Lucas Lopez,Asia Pacific,Mechanical Keyboard,4,149.00,596.00,Processing,
+10122,2025-07-12,Sofia Brown,Middle East,Monitor Arm,1,79.00,79.00,Delivered,
+10123,2025-10-22,Elena Rossi,Latin America,USB-C Dock,3,129.00,387.00,Processing,
+10124,2025-05-18,Ava Dubois,North America,Monitor Arm,3,79.00,237.00,Shipped,
+10125,2025-10-15,Mateo Ivanov,Asia Pacific,Noise-Cancelling Headset,5,199.00,995.00,Delivered,
+10126,2026-02-04,Hugo Lopez,Latin America,Noise-Cancelling Headset,3,199.00,597.00,Shipped,"Gift wrap, ""fragile"" sticker"
+10127,2025-07-25,Yuki Dubois,Middle East,Standing Desk,4,349.00,1396.00,Delivered,"Gift wrap, ""fragile"" sticker"
+10128,2025-06-12,Aarav Patel,Europe,Standing Desk,3,349.00,1047.00,Delivered,
+10129,2025-02-19,Mateo Khan,Asia Pacific,Desk Lamp,5,59.00,295.00,Returned,"Gift wrap, ""fragile"" sticker"
+10130,2026-06-12,Lucas Smith,North America,Webcam 4K,2,99.00,198.00,Processing,
+10131,2026-03-10,Noah Müller,Asia Pacific,Ergo Chair,5,289.00,1445.00,Processing,
+10132,2025-09-02,Isla Garcia,Middle East,Standing Desk,4,349.00,1396.00,Delivered,
+10133,2025-12-06,Zara Rossi,Europe,Standing Desk,4,349.00,1396.00,Delivered,
+10134,2026-01-01,Emma Patel,Europe,Desk Lamp,4,59.00,236.00,Returned,
+10135,2026-01-05,Ava Silva,Latin America,Webcam 4K,2,99.00,198.00,Delivered,
+10136,2026-08-02,Ethan Ivanov,Asia Pacific,Ergo Chair,3,289.00,867.00,Processing,
+10137,2025-04-26,Mateo Tanaka,North America,Noise-Cancelling Headset,2,199.00,398.00,Processing,
+10138,2026-06-15,Ethan Rossi,North America,Webcam 4K,5,99.00,495.00,Delivered,
+10139,2026-01-22,Chen Kim,Latin America,USB-C Dock,1,129.00,129.00,Returned,
+10140,2025-07-25,Noah Ivanov,Asia Pacific,Monitor Arm,5,79.00,395.00,Shipped,
+10141,2025-03-13,Fatima Kim,Middle East,Mechanical Keyboard,2,149.00,298.00,Returned,
+10142,2025-03-11,Chen Tanaka,Middle East,USB-C Dock,3,129.00,387.00,Shipped,
+10143,2025-03-20,Emma Dubois,Latin America,USB-C Dock,4,129.00,516.00,Returned,
+10144,2025-08-16,Mateo Kim,Asia Pacific,Noise-Cancelling Headset,3,199.00,597.00,Shipped,Call before delivery
+10145,2026-04-20,Sofia Garcia,Middle East,Noise-Cancelling Headset,1,199.00,199.00,Delivered,
+10146,2026-07-30,Isla Nguyen,North America,USB-C Dock,2,129.00,258.00,Returned,
+10147,2026-08-19,Yuki Patel,Asia Pacific,Monitor Arm,5,79.00,395.00,Returned,
+10148,2025-09-28,Ava Garcia,Europe,Mechanical Keyboard,3,149.00,447.00,Shipped,
+10149,2025-07-30,Fatima Khan,Latin America,Webcam 4K,3,99.00,297.00,Shipped,"Gift wrap, ""fragile"" sticker"
+10150,2026-03-10,Elena Khan,Middle East,Webcam 4K,2,99.00,198.00,Returned,
+10151,2026-04-04,Lucas Dubois,Asia Pacific,Mechanical Keyboard,4,149.00,596.00,Returned,
+10152,2025-11-06,Ethan Müller,Asia Pacific,Mechanical Keyboard,5,149.00,745.00,Delivered,
+10153,2025-09-23,Mia Smith,Europe,Monitor Arm,4,79.00,316.00,Delivered,
+10154,2025-10-13,Mia Patel,Latin America,Monitor Arm,2,79.00,158.00,Shipped,
+10155,2026-05-27,Isla Smith,Middle East,Ergo Chair,3,289.00,867.00,Delivered,
+10156,2026-01-21,Mateo Müller,Europe,Mechanical Keyboard,4,149.00,596.00,Returned,
+10157,2025-07-20,Sofia Garcia,North America,Ergo Chair,2,289.00,578.00,Returned,
+10158,2025-09-13,Isla Brown,Asia Pacific,Mechanical Keyboard,3,149.00,447.00,Returned,
+10159,2026-02-24,Hugo Patel,Europe,Ergo Chair,4,289.00,1156.00,Shipped,
+10160,2026-03-02,Olivia Nguyen,Middle East,USB-C Dock,3,129.00,387.00,Delivered,
+10161,2025-06-16,Omar Lopez,Latin America,Webcam 4K,4,99.00,396.00,Returned,
+10162,2026-05-17,Noah Singh,Asia Pacific,Mechanical Keyboard,5,149.00,745.00,Returned,
+10163,2025-06-23,Priya Kim,North America,USB-C Dock,2,129.00,258.00,Delivered,
+10164,2026-06-09,Fatima Smith,Latin America,Desk Lamp,1,59.00,59.00,Processing,
+10165,2026-03-19,Fatima Dubois,Europe,Webcam 4K,2,99.00,198.00,Delivered,
+10166,2025-04-18,Ethan Dubois,Europe,Standing Desk,2,349.00,698.00,Delivered,
+10167,2026-07-24,Elena Singh,North America,Mechanical Keyboard,1,149.00,149.00,Delivered,
+10168,2026-02-14,Isla Singh,Asia Pacific,Desk Lamp,2,59.00,118.00,Processing,
+10169,2025-03-14,Yuki Smith,Latin America,Webcam 4K,1,99.00,99.00,Delivered,"Gift wrap, ""fragile"" sticker"
+10170,2025-08-10,Zara Patel,North America,Desk Lamp,2,59.00,118.00,Processing,
+10171,2026-02-11,Chen Kim,Latin America,Webcam 4K,3,99.00,297.00,Delivered,"Gift wrap, ""fragile"" sticker"
+10172,2025-01-12,Yuki Rossi,North America,Ergo Chair,1,289.00,289.00,Processing,
+10173,2025-02-27,Mia Ivanov,North America,Monitor Arm,3,79.00,237.00,Processing,"Gift wrap, ""fragile"" sticker"
+10174,2025-09-11,Isla Lopez,North America,Mechanical Keyboard,2,149.00,298.00,Delivered,
+10175,2025-05-20,Zara Müller,Asia Pacific,Mechanical Keyboard,2,149.00,298.00,Delivered,"Gift wrap, ""fragile"" sticker"
+10176,2026-08-07,Mateo Müller,Asia Pacific,Monitor Arm,2,79.00,158.00,Shipped,
+10177,2026-04-13,Omar Patel,Middle East,Desk Lamp,1,59.00,59.00,Shipped,
+10178,2025-02-07,Aarav Lopez,Latin America,Ergo Chair,4,289.00,1156.00,Processing,
+10179,2025-02-03,Fatima Singh,Latin America,Ergo Chair,2,289.00,578.00,Returned,"Gift wrap, ""fragile"" sticker"
+10180,2025-04-30,Fatima Lopez,Europe,Mechanical Keyboard,4,149.00,596.00,Processing,
+10181,2026-03-16,Zara Khan,Latin America,Webcam 4K,5,99.00,495.00,Delivered,"Gift wrap, ""fragile"" sticker"
+10182,2025-02-11,Yuki Singh,Latin America,Noise-Cancelling Headset,1,199.00,199.00,Processing,
+10183,2026-03-24,Isla Khan,Asia Pacific,Standing Desk,3,349.00,1047.00,Returned,"Gift wrap, ""fragile"" sticker"
+10184,2026-08-13,Zara Brown,Middle East,Noise-Cancelling Headset,1,199.00,199.00,Delivered,
+10185,2025-10-19,Yuki Tanaka,Europe,Ergo Chair,2,289.00,578.00,Delivered,
+10186,2025-03-02,Mateo Rossi,Middle East,Noise-Cancelling Headset,5,199.00,995.00,Processing,
+10187,2026-02-08,Isla Kim,Europe,Mechanical Keyboard,4,149.00,596.00,Shipped,
+10188,2025-11-04,Lucas Silva,Europe,Noise-Cancelling Headset,3,199.00,597.00,Returned,
+10189,2026-06-26,Sofia Müller,Asia Pacific,USB-C Dock,1,129.00,129.00,Shipped,
+10190,2026-05-12,Lucas Garcia,North America,Standing Desk,4,349.00,1396.00,Returned,"Gift wrap, ""fragile"" sticker"
+10191,2025-03-03,Yuki Khan,Latin America,Ergo Chair,4,289.00,1156.00,Shipped,
+10192,2025-12-01,Fatima Rossi,Latin America,Standing Desk,2,349.00,698.00,Shipped,
+10193,2025-02-01,Priya Brown,Europe,Ergo Chair,2,289.00,578.00,Delivered,Call before delivery
+10194,2025-12-28,Mia Tanaka,Europe,Webcam 4K,1,99.00,99.00,Delivered,
+10195,2026-03-29,Ethan Müller,Latin America,Ergo Chair,5,289.00,1445.00,Shipped,
+10196,2026-08-14,Fatima Patel,Asia Pacific,Mechanical Keyboard,4,149.00,596.00,Returned,
+10197,2025-12-03,Emma Smith,Middle East,Desk Lamp,3,59.00,177.00,Delivered,"Gift wrap, ""fragile"" sticker"
+10198,2025-07-15,Liam Garcia,North America,USB-C Dock,1,129.00,129.00,Delivered,
+10199,2025-03-12,Ethan Kim,Europe,Standing Desk,1,349.00,349.00,Delivered,
+10200,2026-08-21,Chen Tanaka,Asia Pacific,Webcam 4K,1,99.00,99.00,Delivered,"Gift wrap, ""fragile"" sticker"
+10201,2025-12-18,Mia Rossi,Latin America,Mechanical Keyboard,1,149.00,149.00,Processing,
+10202,2026-06-07,Ava Nguyen,Middle East,Noise-Cancelling Headset,2,199.00,398.00,Returned,
+10203,2025-03-05,Emma Smith,Asia Pacific,Mechanical Keyboard,4,149.00,596.00,Returned,
+10204,2025-12-15,Yuki Garcia,North America,USB-C Dock,3,129.00,387.00,Delivered,
+10205,2026-04-29,Noah Tanaka,Middle East,Monitor Arm,1,79.00,79.00,Delivered,
+10206,2026-02-18,Yuki Lopez,Middle East,Monitor Arm,2,79.00,158.00,Processing,
+10207,2025-05-17,Sofia Dubois,Latin America,Noise-Cancelling Headset,4,199.00,796.00,Processing,
+10208,2026-07-30,Hugo Tanaka,North America,Monitor Arm,1,79.00,79.00,Returned,
+10209,2025-11-30,Liam Ivanov,Asia Pacific,Monitor Arm,5,79.00,395.00,Delivered,
+10210,2025-12-10,Chen Nguyen,North America,Ergo Chair,3,289.00,867.00,Delivered,
+10211,2026-05-05,Isla Kim,Middle East,Mechanical Keyboard,1,149.00,149.00,Shipped,Call before delivery
+10212,2025-11-22,Noah Tanaka,Middle East,Mechanical Keyboard,1,149.00,149.00,Returned,"Gift wrap, ""fragile"" sticker"
+10213,2025-02-25,Lucas Kim,Latin America,Mechanical Keyboard,1,149.00,149.00,Delivered,Call before delivery
+10214,2025-09-20,Lucas Lopez,Asia Pacific,Webcam 4K,5,99.00,495.00,Processing,
+10215,2026-04-04,Chen Silva,Middle East,Mechanical Keyboard,5,149.00,745.00,Returned,
+10216,2025-06-25,Emma Rossi,North America,Webcam 4K,3,99.00,297.00,Delivered,Call before delivery
+10217,2026-07-20,Emma Silva,North America,Noise-Cancelling Headset,4,199.00,796.00,Returned,
+10218,2025-05-11,Noah Brown,Middle East,USB-C Dock,1,129.00,129.00,Delivered,
+10219,2025-05-11,Zara Tanaka,North America,Mechanical Keyboard,1,149.00,149.00,Delivered,Call before delivery
+10220,2026-03-28,Emma Lopez,Europe,Mechanical Keyboard,4,149.00,596.00,Returned,"Gift wrap, ""fragile"" sticker"
+10221,2025-07-04,Yuki Müller,Asia Pacific,Mechanical Keyboard,4,149.00,596.00,Returned,
+10222,2025-06-29,Ava Garcia,Europe,Desk Lamp,5,59.00,295.00,Returned,
+10223,2025-12-22,Isla Kim,Latin America,USB-C Dock,2,129.00,258.00,Shipped,
+10224,2026-04-16,Omar Lopez,Asia Pacific,Desk Lamp,5,59.00,295.00,Shipped,
+10225,2025-03-19,Emma Tanaka,Latin America,Noise-Cancelling Headset,3,199.00,597.00,Shipped,
+10226,2025-02-21,Yuki Patel,Middle East,USB-C Dock,1,129.00,129.00,Returned,
+10227,2025-04-19,Lucas Dubois,Asia Pacific,Monitor Arm,1,79.00,79.00,Delivered,
+10228,2025-08-24,Zara Brown,Europe,Desk Lamp,1,59.00,59.00,Processing,
+10229,2026-06-02,Liam Kim,Latin America,Mechanical Keyboard,1,149.00,149.00,Returned,
+10230,2026-02-04,Sofia Müller,Latin America,Noise-Cancelling Headset,4,199.00,796.00,Shipped,
+10231,2026-01-15,Fatima Müller,Middle East,USB-C Dock,2,129.00,258.00,Delivered,
+10232,2025-10-21,Mateo Ivanov,Latin America,Desk Lamp,1,59.00,59.00,Returned,
+10233,2025-10-28,Emma Khan,Europe,USB-C Dock,3,129.00,387.00,Delivered,"Gift wrap, ""fragile"" sticker"
+10234,2025-01-26,Zara Müller,North America,USB-C Dock,3,129.00,387.00,Delivered,
+10235,2026-07-15,Chen Singh,Europe,Standing Desk,3,349.00,1047.00,Shipped,
+10236,2025-10-08,Isla Rossi,Europe,Webcam 4K,2,99.00,198.00,Delivered,
+10237,2025-03-04,Yuki Silva,Middle East,Noise-Cancelling Headset,2,199.00,398.00,Processing,
+10238,2025-02-11,Aarav Nguyen,Latin America,Mechanical Keyboard,3,149.00,447.00,Delivered,
+10239,2025-01-10,Priya Khan,Latin America,Webcam 4K,1,99.00,99.00,Delivered,
+10240,2025-02-21,Chen Tanaka,Latin America,Noise-Cancelling Headset,1,199.00,199.00,Processing,Call before delivery
+10241,2025-03-15,Isla Kim,Middle East,Standing Desk,1,349.00,349.00,Delivered,Call before delivery
+10242,2026-01-23,Liam Kim,North America,USB-C Dock,1,129.00,129.00,Delivered,
+10243,2025-09-08,Ava Singh,Asia Pacific,Desk Lamp,3,59.00,177.00,Delivered,
+10244,2025-06-28,Chen Garcia,Latin America,Standing Desk,5,349.00,1745.00,Returned,Call before delivery
+10245,2026-08-06,Noah Brown,North America,Mechanical Keyboard,5,149.00,745.00,Processing,
+10246,2025-10-01,Zara Dubois,Middle East,Mechanical Keyboard,4,149.00,596.00,Returned,
+10247,2026-06-12,Omar Rossi,Europe,Ergo Chair,4,289.00,1156.00,Processing,
+10248,2026-05-06,Yuki Brown,Europe,USB-C Dock,2,129.00,258.00,Delivered,
+10249,2026-03-10,Chen Patel,Latin America,Noise-Cancelling Headset,5,199.00,995.00,Delivered,
+10250,2026-07-15,Lucas Lopez,North America,Standing Desk,1,349.00,349.00,Shipped,
+10251,2025-05-05,Hugo Singh,North America,Ergo Chair,4,289.00,1156.00,Delivered,
+10252,2025-05-12,Noah Tanaka,Asia Pacific,Ergo Chair,4,289.00,1156.00,Delivered,
+10253,2025-10-19,Hugo Dubois,Latin America,USB-C Dock,5,129.00,645.00,Delivered,
+10254,2026-01-27,Priya Kim,Middle East,Webcam 4K,4,99.00,396.00,Shipped,
+10255,2025-10-20,Elena Dubois,North America,Webcam 4K,2,99.00,198.00,Delivered,Call before delivery
+10256,2025-10-17,Ethan Khan,Europe,Mechanical Keyboard,5,149.00,745.00,Delivered,
+10257,2025-06-27,Fatima Smith,North America,Desk Lamp,1,59.00,59.00,Delivered,
+10258,2025-06-11,Omar Dubois,North America,Webcam 4K,4,99.00,396.00,Delivered,
+10259,2026-07-07,Mateo Garcia,North America,Desk Lamp,4,59.00,236.00,Processing,"Gift wrap, ""fragile"" sticker"
+10260,2025-12-18,Zara Patel,Middle East,Standing Desk,5,349.00,1745.00,Delivered,
+10261,2025-02-19,Omar Patel,Europe,USB-C Dock,5,129.00,645.00,Processing,
+10262,2025-05-18,Hugo Garcia,Latin America,Mechanical Keyboard,3,149.00,447.00,Delivered,
+10263,2026-06-22,Yuki Tanaka,Asia Pacific,Ergo Chair,2,289.00,578.00,Shipped,"Gift wrap, ""fragile"" sticker"
+10264,2026-08-20,Ethan Lopez,North America,Noise-Cancelling Headset,2,199.00,398.00,Delivered,
+10265,2025-03-07,Yuki Patel,Asia Pacific,USB-C Dock,5,129.00,645.00,Shipped,
+10266,2025-08-06,Hugo Smith,Europe,Monitor Arm,2,79.00,158.00,Shipped,"Gift wrap, ""fragile"" sticker"
+10267,2025-05-08,Aarav Garcia,Middle East,USB-C Dock,3,129.00,387.00,Delivered,"Gift wrap, ""fragile"" sticker"
+10268,2025-03-07,Mia Garcia,Europe,Mechanical Keyboard,5,149.00,745.00,Shipped,
+10269,2025-04-18,Mia Lopez,Middle East,Mechanical Keyboard,4,149.00,596.00,Shipped,
+10270,2025-05-24,Emma Dubois,Middle East,USB-C Dock,1,129.00,129.00,Delivered,
+10271,2025-10-19,Chen Smith,North America,Noise-Cancelling Headset,5,199.00,995.00,Returned,
+10272,2026-02-14,Hugo Khan,Asia Pacific,Desk Lamp,1,59.00,59.00,Delivered,
+10273,2026-05-28,Mia Ivanov,Asia Pacific,Noise-Cancelling Headset,5,199.00,995.00,Delivered,
+10274,2026-04-26,Emma Singh,Latin America,Ergo Chair,2,289.00,578.00,Delivered,
+10275,2025-07-09,Chen Tanaka,Latin America,Ergo Chair,4,289.00,1156.00,Shipped,
+10276,2026-05-18,Ava Patel,Europe,Noise-Cancelling Headset,4,199.00,796.00,Delivered,Call before delivery
+10277,2026-07-21,Mateo Khan,Latin America,Mechanical Keyboard,3,149.00,447.00,Shipped,
+10278,2025-10-22,Emma Kim,North America,USB-C Dock,3,129.00,387.00,Delivered,Call before delivery
+10279,2025-08-30,Yuki Müller,Latin America,Monitor Arm,4,79.00,316.00,Delivered,
+10280,2025-11-07,Priya Rossi,Europe,Ergo Chair,3,289.00,867.00,Delivered,
+10281,2026-04-28,Zara Ivanov,Europe,Mechanical Keyboard,1,149.00,149.00,Delivered,"Gift wrap, ""fragile"" sticker"
+10282,2025-02-28,Sofia Nguyen,Europe,USB-C Dock,3,129.00,387.00,Processing,
+10283,2026-02-18,Ethan Smith,Europe,Ergo Chair,2,289.00,578.00,Processing,
+10284,2025-10-07,Noah Dubois,Middle East,Noise-Cancelling Headset,2,199.00,398.00,Shipped,
+10285,2026-08-10,Ava Khan,Asia Pacific,Desk Lamp,5,59.00,295.00,Shipped,
+10286,2026-01-07,Hugo Khan,Middle East,USB-C Dock,3,129.00,387.00,Shipped,
+10287,2025-01-31,Liam Tanaka,Middle East,Noise-Cancelling Headset,4,199.00,796.00,Shipped,
+10288,2025-12-10,Isla Smith,North America,Desk Lamp,1,59.00,59.00,Shipped,
+10289,2025-01-27,Fatima Silva,Europe,Webcam 4K,2,99.00,198.00,Returned,
+10290,2026-06-19,Lucas Garcia,North America,Monitor Arm,5,79.00,395.00,Returned,"Gift wrap, ""fragile"" sticker"
+10291,2025-03-17,Mateo Patel,Asia Pacific,Monitor Arm,1,79.00,79.00,Shipped,"Gift wrap, ""fragile"" sticker"
+10292,2025-11-26,Liam Patel,Latin America,USB-C Dock,2,129.00,258.00,Delivered,Call before delivery
+10293,2025-01-10,Priya Dubois,Asia Pacific,Desk Lamp,4,59.00,236.00,Returned,"Gift wrap, ""fragile"" sticker"
+10294,2025-04-27,Hugo Smith,Latin America,Mechanical Keyboard,4,149.00,596.00,Delivered,
+10295,2025-04-29,Aarav Smith,Europe,Standing Desk,1,349.00,349.00,Delivered,
+10296,2025-09-01,Mateo Rossi,Asia Pacific,Ergo Chair,5,289.00,1445.00,Delivered,
+10297,2025-12-21,Chen Khan,Middle East,Webcam 4K,1,99.00,99.00,Processing,
+10298,2026-01-13,Ava Dubois,Europe,Mechanical Keyboard,3,149.00,447.00,Returned,
+10299,2026-01-25,Zara Ivanov,Europe,Mechanical Keyboard,2,149.00,298.00,Delivered,Call before delivery
