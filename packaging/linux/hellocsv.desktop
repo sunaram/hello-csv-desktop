@@ -1,0 +1,12 @@
+[Desktop Entry]
+Type=Application
+Name=Hello CSV
+GenericName=CSV Viewer and Editor
+Comment=Fast CSV and TSV viewer and editor that opens files of any size
+Exec=hellocsv %f
+Icon=hellocsv
+Terminal=false
+Categories=Office;Viewer;Utility;
+MimeType=text/csv;text/tab-separated-values;
+Keywords=csv;tsv;table;spreadsheet;
+StartupWMClass=hellocsv

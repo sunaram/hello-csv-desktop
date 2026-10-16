@@ -6,9 +6,26 @@ on:
   pull_request:
   workflow_dispatch:
 
+# Pushing a v* tag builds every platform and attaches the files to a DRAFT release;
+# review and publish it by hand from the Releases page.
+# Files are uploaded straight to the release (not via artifacts), so the account's artifact quota cannot break a release.
 jobs:
+  draft:
+    if: startsWith(github.ref, 'refs/tags/v')
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh release view "$GITHUB_REF_NAME" --repo "$GITHUB_REPOSITORY" || gh release create "$GITHUB_REF_NAME" --repo "$GITHUB_REPOSITORY" --draft --generate-notes --title "$GITHUB_REF_NAME"
+
   windows:
+    needs: [draft]
+    if: ${{ !cancelled() && contains(fromJSON('["success","skipped"]'), needs.draft.result) }}
     runs-on: windows-latest
+    permissions:
+      contents: write
     steps:
       - uses: actions/checkout@v4
       - uses: Swatinem/rust-cache@v2
@@ -21,29 +38,48 @@ jobs:
           MSIX_PUBLISHER: ${{ vars.MSIX_PUBLISHER }}
           MSIX_PUBLISHER_DISPLAY: ${{ vars.MSIX_PUBLISHER_DISPLAY }}
           MSIX_DISPLAY_NAME: ${{ vars.MSIX_DISPLAY_NAME }}
-      - shell: bash
-        run: |
-          mkdir dist
-          cp target/release/hellocsv.exe packaging/msix/out/hellocsv.msix dist/
-      - uses: actions/upload-artifact@v4
-        with:
-          name: windows
-          path: dist/*
+      - if: startsWith(github.ref, 'refs/tags/v')
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh release upload "$GITHUB_REF_NAME" target/release/hellocsv.exe packaging/msix/out/hellocsv.msix packaging/windows/install.ps1 --clobber
 
-  release:
-    if: startsWith(github.ref, 'refs/tags/v')
-    needs: [windows]
-    runs-on: ubuntu-latest
+  linux:
+    needs: [draft]
+    if: ${{ !cancelled() && contains(fromJSON('["success","skipped"]'), needs.draft.result) }}
+    runs-on: ubuntu-22.04
     permissions:
       contents: write
     steps:
-      - uses: actions/download-artifact@v4
-        with:
-          path: dist
-          merge-multiple: true
-      - uses: softprops/action-gh-release@v2
-        with:
-          fail_on_unmatched_files: true
-          files: |
-            dist/hellocsv.exe
-            dist/hellocsv.msix
+      - uses: actions/checkout@v4
+      - uses: Swatinem/rust-cache@v2
+      - run: sudo apt-get update && sudo apt-get install -y libwebkit2gtk-4.1-dev libgtk-3-dev libxdo-dev
+      - run: cargo test --release
+      - run: cargo build --release
+      - run: tar -czf hellocsv-linux-x86_64.tar.gz -C target/release hellocsv -C ../../packaging/linux hellocsv.desktop hellocsv.svg install.sh
+      - if: startsWith(github.ref, 'refs/tags/v')
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh release upload "$GITHUB_REF_NAME" hellocsv-linux-x86_64.tar.gz --clobber
+
+  macos:
+    needs: [draft]
+    if: ${{ !cancelled() && contains(fromJSON('["success","skipped"]'), needs.draft.result) }}
+    runs-on: macos-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: Swatinem/rust-cache@v2
+      - run: rustup target add x86_64-apple-darwin aarch64-apple-darwin
+      - run: cargo test --release
+      - run: |
+          cargo build --release --target aarch64-apple-darwin
+          cargo build --release --target x86_64-apple-darwin
+          lipo -create -output hellocsv target/aarch64-apple-darwin/release/hellocsv target/x86_64-apple-darwin/release/hellocsv
+          chmod +x hellocsv
+      - run: brew install librsvg && sh packaging/macos/bundle.sh ./hellocsv
+      - if: startsWith(github.ref, 'refs/tags/v')
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh release upload "$GITHUB_REF_NAME" packaging/macos/out/*.dmg --clobber

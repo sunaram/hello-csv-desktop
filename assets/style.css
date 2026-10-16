@@ -48,3 +48,6 @@ mark{background:var(--hl);color:inherit;border-radius:2px;padding:0 1px}
 .footer,.toolbar,.grp,#pinfo,.grp label{white-space:nowrap}
 .footer{flex-wrap:wrap}
 #info{overflow:hidden;text-overflow:ellipsis;min-width:0;flex:1}
+#upd{position:fixed;right:16px;bottom:48px;max-width:calc(100vw - 32px);background:var(--bar);border:1px solid var(--bd);border-radius:6px;padding:8px 12px;box-shadow:0 2px 8px #0004;z-index:50}
+#upd a{color:var(--a)}
+#upd button{background:none;border:0;color:var(--mut);margin-left:8px;padding:0 4px}

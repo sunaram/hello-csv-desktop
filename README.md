@@ -18,6 +18,19 @@ It is the desktop sibling of the [Hello CSV VS Code extension](https://github.co
   delimiter auto-detection (comma, semicolon, tab, pipe) with override, header-row toggle, Copy as Markdown / TSV.
 - **Desktop:** open dialog, drag and drop, file association, recent files, live reload when the file changes on disk,
   light / dark / system theme, zoom (all remembered).
+- **Updates:** downloadable builds check GitHub Releases once a day and show a notice (Help menu to turn off or check now);
+  Microsoft Store builds never do, the Store updates them.
+
+## Install
+
+Downloads are on the [Releases page](https://github.com/sunaram/hello-csv-desktop/releases/latest):
+
+| File | For |
+|---|---|
+| `hellocsv.exe` | Windows, portable (needs the WebView2 runtime, preinstalled on Windows 11); `install.ps1` registers the `.csv` / `.tsv` / `.tab` association |
+| `hellocsv.msix` | Windows package |
+| `hellocsv-linux-x86_64.tar.gz` | Linux, with `install.sh` for a per-user install (registers the CSV / TSV associations) |
+| macOS `.dmg` | macOS (universal, ad-hoc signed: right-click > Open the first time) |
 
 ## Shortcuts
 

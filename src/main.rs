@@ -50,6 +50,8 @@ struct State {
     theme: &'static str,
     doc: Option<Doc>,
     dirty: bool,
+    /// check GitHub for a newer release (never for Microsoft Store installs)
+    updates: bool,
 }
 
 type Shared = Arc<Mutex<State>>;
@@ -74,6 +76,11 @@ fn unescape(s: &str) -> String {
 
 fn param(q: &str, key: &str) -> String {
     q.split('&').find_map(|kv| kv.strip_prefix(key).and_then(|r| r.strip_prefix('='))).map(unescape).unwrap_or_default()
+}
+
+/// Store (MSIX) installs live under WindowsApps and are updated by the Store, so they never check themselves.
+fn is_store() -> bool {
+    cfg!(windows) && std::env::current_exe().is_ok_and(|p| p.to_string_lossy().to_ascii_lowercase().contains("\\windowsapps\\"))
 }
 
 fn canon(p: PathBuf) -> PathBuf {
@@ -101,10 +108,11 @@ fn err_json(msg: &str) -> String {
     o
 }
 
-fn page(theme: &str) -> String {
+fn page(theme: &str, updates: bool) -> String {
+    let upd = if is_store() { String::new() } else { format!("window.__upd={{v:\"{}\",auto:{updates}}};", env!("CARGO_PKG_VERSION")) };
     format!(
         "<!doctype html><html data-theme=\"{theme}\"><meta charset=utf-8><meta name=viewport content=\"width=device-width,initial-scale=1\">\
-<title>{APP}</title><base href=\"{ORIGIN}/\"><style>{CSS}</style>{BODY}<script>{JS}</script>"
+<title>{APP}</title><base href=\"{ORIGIN}/\"><style>{CSS}</style>{BODY}<script>{upd}{JS}</script>"
     )
 }
 
@@ -247,6 +255,7 @@ struct Settings {
     theme: &'static str,
     zoom: f64,
     recent: Vec<PathBuf>,
+    updates: bool,
 }
 
 fn settings_path() -> Option<PathBuf> {
@@ -263,12 +272,13 @@ fn settings_path() -> Option<PathBuf> {
 }
 
 fn load_settings() -> Settings {
-    let mut s = Settings { theme: "", zoom: 1.0, recent: vec![] };
+    let mut s = Settings { theme: "", zoom: 1.0, recent: vec![], updates: true };
     let Some(text) = settings_path().and_then(|p| std::fs::read_to_string(p).ok()) else { return s };
     for line in text.lines() {
         match line.split_once('=') {
             Some(("theme", "light")) => s.theme = "light",
             Some(("theme", "dark")) => s.theme = "dark",
+            Some(("updates", v)) => s.updates = v != "off",
             Some(("zoom", v)) => s.zoom = v.parse().map_or(1.0, |z: f64| z.clamp(0.3, 5.0)),
             Some(("recent", p)) if s.recent.len() < MAX_RECENT => s.recent.push(PathBuf::from(p)),
             _ => {}
@@ -279,7 +289,7 @@ fn load_settings() -> Settings {
 
 fn save_settings(s: &Settings) {
     let Some(path) = settings_path() else { return };
-    let mut out = format!("theme={}\nzoom={}\n", s.theme, s.zoom);
+    let mut out = format!("theme={}\nzoom={}\nupdates={}\n", s.theme, s.zoom, if s.updates { "on" } else { "off" });
     for p in &s.recent {
         out.push_str(&format!("recent={}\n", p.display()));
     }
@@ -310,8 +320,8 @@ fn fill_recent(sub: &muda::Submenu, old: &mut Vec<muda::MenuItem>, recent: &[Pat
     add("recent_clear".into(), "Clear Recent".into(), true);
 }
 
-fn build_menu() -> (muda::Menu, muda::Submenu) {
-    use muda::{Menu, MenuItem, PredefinedMenuItem as P, Submenu};
+fn build_menu(updates: bool) -> (muda::Menu, muda::Submenu) {
+    use muda::{CheckMenuItem, Menu, MenuItem, PredefinedMenuItem as P, Submenu};
     // macOS gets real accelerators; elsewhere shortcuts are handled in page JS
     // (the focused webview swallows menu accelerators) and shown as a label hint.
     let it = |id: &str, label: &str, key: &str| -> MenuItem {
@@ -358,6 +368,11 @@ fn build_menu() -> (muda::Menu, muda::Submenu) {
     )
     .unwrap();
     let help = Submenu::with_items("&Help", true, &[&it("about", "&About", "")]).unwrap();
+    if !is_store() {
+        let _ = help.prepend(&sep);
+        let _ = help.prepend(&CheckMenuItem::with_id("update_auto", "Check for updates at &startup", true, updates, None));
+        let _ = help.prepend(&it("update", "Check for &Updates…", ""));
+    }
     (Menu::with_items(&[&file, &view, &help]).unwrap(), recent)
 }
 
@@ -386,6 +401,7 @@ fn main() {
         // no argument: reopen the last file
         file: arg.or_else(|| cfg.recent.first().cloned()),
         theme: cfg.theme,
+        updates: cfg.updates,
         ..Default::default()
     }));
     let epoch = Arc::new(AtomicU64::new(0));
@@ -398,8 +414,17 @@ fn main() {
         .build(&event_loop)
         .unwrap();
 
+    // title-bar / taskbar icon: the one embedded in the exe by build.rs (resource id 1)
+    #[cfg(windows)]
+    {
+        use tao::platform::windows::IconExtWindows;
+        if let Ok(i) = tao::window::Icon::from_resource(1, None) {
+            window.set_window_icon(Some(i));
+        }
+    }
+
     // The menu must be attached before the webview on Linux so it sits above it in the GTK box.
-    let (menu, recent_menu) = build_menu();
+    let (menu, recent_menu) = build_menu(cfg.updates);
     let mut recent_items = Vec::new();
     fill_recent(&recent_menu, &mut recent_items, &cfg.recent);
     {
@@ -431,7 +456,7 @@ fn main() {
             let path = req.uri().path().to_string();
             let ok = |ct: &str, body: Vec<u8>| Response::builder().header(CONTENT_TYPE, ct).body(Cow::Owned(body)).unwrap();
             if path == "/" {
-                return ok("text/html; charset=utf-8", page(st.lock().unwrap().theme).into_bytes());
+                return ok("text/html; charset=utf-8", { let s = st.lock().unwrap(); page(s.theme, s.updates) }.into_bytes());
             }
             if path.starts_with("/__") {
                 return ok("application/json", api(&st, &g, &path, req.uri().query().unwrap_or("")).into_bytes());
@@ -567,6 +592,14 @@ fn main() {
                             state.lock().unwrap().theme = cfg.theme;
                             save_settings(&cfg);
                             let _ = webview.evaluate_script(&format!("__theme('{}')", cfg.theme));
+                        }
+                        "update" => {
+                            let _ = webview.evaluate_script("__checkUpdate&&__checkUpdate(true)");
+                        }
+                        "update_auto" => {
+                            cfg.updates = !cfg.updates;
+                            state.lock().unwrap().updates = cfg.updates;
+                            save_settings(&cfg);
                         }
                         "about" => {
                             rfd::MessageDialog::new()
